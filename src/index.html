@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Daily Journal</title>
+    <link rel="stylesheet" type="text/css" href="styles/journal.css">
+</head>
+
+<body>
+    <h1>Daily Journal</h1>
+    <form>
+        <fieldset>
+            <!-- First field -->
+            <label for="journalDate">Date of entry</label>
+            <input type="date" name="journalDate" id="journalDate">
+        </fieldset> <!-- / first field-->
+
+        <fieldset>
+            <!-- Second field -->
+            <label for="concept">Concepts covered</label>
+            <input type="text" name="concept" id="concept">
+        </fieldset> <!-- / second field-->
+
+        <fieldset>
+            <!-- Third field -->
+            <label for="journal-entry">Journal Entry</label>
+            <textarea name="journal-entry" id="journal-entry" rows="5" cols="20 ">Enter text</textarea>
+        </fieldset> <!-- / third field-->
+
+        <fieldset>
+            <!-- Fourth field-->
+            <label for="mood">Mood for the day</label>
+            <select name="mood">
+                <option value="select">Select an option</option>
+                <option value="super">Super</option>
+                <option value="happy">Happy</option>
+                <option value="ok">Ok</option>
+                <option value="sad">Sad</option>
+            </select>
+        </fieldset> <!-- / Fourth field-->
+
+        <!--Button -->
+        <button id="button">Record Journal Entry</button> <!-- /button-->
+
+
+
+
+
+
+
+    </form>
+
+    <script src="scripts/journal.js"></script>
+
+</body>
+
+</html>
