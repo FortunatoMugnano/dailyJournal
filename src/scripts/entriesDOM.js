@@ -1,12 +1,16 @@
+import createEntrie from "./entryComponent.js";
+
 const journalEntries = {
     addToJournal(dataArray) {   // This function will attach the variable in the HTML
         dataArray.forEach(element => {
+            let cretePhrase =  document.querySelector(".entryLog");
             let entryHtml = createEntrie.makeJournalEntryComponent(element)
-            entriesDom.cretePhrase.innerHTML += entryHtml
+            cretePhrase.innerHTML += entryHtml
         });
     }
 }
 
-const entriesDom = {
-    cretePhrase: document.querySelector(".entryLog"),
-}
+
+
+
+export default journalEntries;

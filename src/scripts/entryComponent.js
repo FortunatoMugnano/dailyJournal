@@ -8,3 +8,5 @@ const createEntrie = {
     </div>
     `}
 }
+
+export default createEntrie;
