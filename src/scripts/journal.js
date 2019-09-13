@@ -1,6 +1,7 @@
 import API from "./data.js";
 import journalEntries from "./entriesDOM.js";
 import createJournalEntries from "./factoryEntries.js";
+import createEntrie from "./entryComponent.js";
 
 
 /*
@@ -55,7 +56,7 @@ document.querySelector("#button").addEventListener("click", () => {
         return
     }
 
-    let newEntryObj = createJournalEntries (journalDate, concept, journalEntry, mood)
+    let newEntryObj = createJournalEntries(journalDate, concept, journalEntry, mood)
 
     document.querySelector("#concept").value = ""
     document.querySelector("#journal-entry").value = ""
@@ -69,6 +70,68 @@ document.querySelector("#button").addEventListener("click", () => {
 
 })
 
+/* Radio Button eventListener part */
+
+const superButton = document.querySelector("#super")
+const happyButton = document.querySelector("#happy")
+const okButton = document.querySelector("#ok")
+const sadButton = document.querySelector("#sad")
+
+
+superButton.addEventListener("click", event => {
+    API.getJournalEntries()
+        .then(res => res.filter(entry => entry.mood === superButton.id))
+        .then(filteredRes => {
+            document.querySelector(".entryLog").innerHTML = ""
+            journalEntries.addToJournal(filteredRes)
+        })
+})
+
+happyButton.addEventListener("click", event => {
+    API.getJournalEntries()
+        .then(res => res.filter(entry => entry.mood === happyButton.id))
+        .then(filteredRes => {
+            document.querySelector(".entryLog").innerHTML = ""
+            journalEntries.addToJournal(filteredRes)
+        })
+})
+
+okButton.addEventListener("click", event => {
+    API.getJournalEntries()
+        .then(res => res.filter(entry => entry.mood === okButton.id))
+        .then(filteredRes => {
+            document.querySelector(".entryLog").innerHTML = ""
+            journalEntries.addToJournal(filteredRes)
+        })
+})
+
+sadButton.addEventListener("click", event => {
+    API.getJournalEntries()
+        .then(res => res.filter(entry => entry.mood === sadButton.id))
+        .then(filteredRes => {
+            document.querySelector(".entryLog").innerHTML = ""
+            journalEntries.addToJournal(filteredRes)
+        })
+})
+
+
+
+/* Delete button event listener */
+
+document.querySelector(".entryLog").addEventListener("click", event => {
+    if(event.target.id.startsWith("deleteEntry--")) {
+        API.deleteEntries(event.target.id.split("--")[1])
+        .then(() => {
+            document.querySelector(".entryLog").innerHTML = "";
+            API.getJournalEntries().then(data => {
+                journalEntries.addToJournal(data)
+            })
+            
+        })
+    }
+})
+
+/* Edit button event listener */
 
 
 

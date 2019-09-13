@@ -3,3 +3,16 @@ fieldset {
     flex-direction: column;
     width: 40%;
 }
+
+#moodFieldset {
+    display: flex;
+}
+
+#button {
+    margin: 10px;
+}
+
+.fieldset {
+    display: flex;
+    margin-top: 10px;
+}

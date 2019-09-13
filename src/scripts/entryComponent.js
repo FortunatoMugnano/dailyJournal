@@ -5,6 +5,8 @@ const createEntrie = {
     <p>${entry.entry}</p>
     <p>${entry.dateOfEntry}</p>
     <p>My mood today is ${entry.mood}!</p>
+    <button id="deleteEntry--${entry.id}" type="button">Delete Entry</button>
+    <button id="editEntry--${entry.id}" type="button">Edit Entry</button>
     </div>
     `}
 }

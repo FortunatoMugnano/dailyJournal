@@ -33,7 +33,7 @@
         <fieldset>
             <!-- Fourth field-->
             <label for="mood">Mood for the day</label>
-            <select name="mood" id="mood">
+            <select id="mood">
                 <option value="select">Select an option</option>
                 <option value="super">Super</option>
                 <option value="happy">Happy</option>
@@ -45,6 +45,33 @@
         <!--Button -->
         <button id="button">Record Journal Entry</button> <!-- /button-->
 
+        <!--Mood Radio Button-->
+        <fieldset id="moodFieldset">
+            <legend>Filter Journal Entries By Mood</legend>
+            <input type="radio" id="super" name="mood" value="super">
+            <label for="super">Super</label>
+            <input type="radio" id="happy" name="mood" value="happy">
+            <label for="happy">Happy</label>
+            <input type="radio" id="ok" name="mood" value="ok">
+            <label for="ok">Ok</label>
+            <input type="radio" id="sad" name="mood" value="sad">
+            <label for="sad">Sad</label>
+        </fieldset>
+
+        <section id="entryForm">
+            <form>
+                <fieldset class="fieldset">
+                    <input type="hidden" id="entryId" value="">
+                    <label for="entryConcept">Modify the Concept</label>
+                    <input type="text" id="entryConcept" name="entryConcept">
+                    <label for="entryJournal">Modify your Journal</label>
+                    <textarea type="text" id="entryJournal" name="entryJournal" rows="3" cols="18"></textarea>
+                    <button type="button" id="editButton">Edit your Entry</button>
+                </fieldset>
+                
+            </form>
+        </section>
+
         <article class="entryLog">
 
         </article>
@@ -55,10 +82,15 @@
 
 
 
+
+
+
+
     </form>
 
     <script type="module" src="scripts/journal.js"></script>
-   
+
+
 
 </body>
 
