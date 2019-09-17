@@ -1,41 +1,73 @@
 {
-
-    "entries": [
-        {
-            "dateOfEntry": "27 August 2019",
-            "conceptsCovered": "Manipulate the Dom",
-            "entry": "Today we have covered a lot of new information, we create functions able to create part of HTML and more other functions methods.",
-            "mood": "ok",
-            "id": 1
-        },
-        {
-            "dateOfEntry": "26 August 2019",
-            "conceptsCovered": "Objects and Functions in JS",
-            "entry": "Today we have learned about Objects and how important they are for JS, also we have discussed about the Functions and their value",
-            "mood": "ok",
-            "id": 2
-        },
-        {
-            "dateOfEntry": "23 August 2019",
-            "conceptsCovered": "Celebrity Project Presentation",
-            "entry": "We have presented our first project in front of the class, it was good!",
-            "mood": "super",
-            "id": 3
-        },
-        {
-            "dateOfEntry": "22 August 2019",
-            "conceptsCovered": "Project work",
-            "entry": "We have worked as a team in the first school project",
-            "mood": "ok",
-            "id": 4
-        },
-        {
-            "dateOfEntry": "12 August 2019",
-            "conceptsCovered": "First day of school",
-            "entry": "Today it was the first day of school, I was very exited to meet new people and start this adventure!",
-            "mood": "super",
-            "id": 5
-        }
-    
-    ]
+  "entries": [
+    {
+      "dateOfEntry": "2019-08-27",
+      "conceptsCovered": "Manipulate the Dom and more",
+      "entry": "Today we have covered a lot of new information, we create functions able to create part of HTML and more other functions methods.",
+      "mood": "ok",
+      "id": 1
+    },
+    {
+      "dateOfEntry": "26 August 2019",
+      "conceptsCovered": "Objects and Functions in JS",
+      "entry": "Today we have learned about Objects and how important they are for JS, also we have discussed about the Functions and their value",
+      "mood": "ok",
+      "id": 2
+    },
+    {
+      "dateOfEntry": "23 August 2019",
+      "conceptsCovered": "Celebrity Project Presentation",
+      "entry": "We have presented our first project in front of the class, it was good!",
+      "mood": "super",
+      "id": 3
+    },
+    {
+      "dateOfEntry": "22 August 2019",
+      "conceptsCovered": "Project work",
+      "entry": "We have worked as a team in the first school project",
+      "mood": "ok",
+      "id": 4
+    },
+    {
+      "dateOfEntry": "12 August 2019",
+      "conceptsCovered": "First day of school",
+      "entry": "Today it was the first day of school, I was very exited to meet new people and start this adventure!",
+      "mood": "super",
+      "id": 5
+    },
+    {
+      "dateOfEntry": "2019-09-16",
+      "conceptsCovered": "Object Methods and WebPack",
+      "entry": "Today we have covered plenty of new stuff like object methods and Web-pack",
+      "mood": "ok",
+      "id": 6,
+      "concpet": "",
+      "journal": ""
+    },
+    {
+      "dateOfEntry": "2019-09-17",
+      "conceptsCovered": "Forza Napoli Oggi and Forever",
+      "entry": "Today lab time and Napoli will play again Liverpool! ",
+      "mood": "Super",
+      "id": 7
+    }
+  ],
+  "mood": [
+    {
+      "id": 1,
+      "name": "Super"
+    },
+    {
+      "id": 2,
+      "name": "Great"
+    },
+    {
+      "id": 3,
+      "name": "Ok"
+    },
+    {
+      "id": 4,
+      "name": "No Happy"
+    }
+  ]
 }

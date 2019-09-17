@@ -2,6 +2,8 @@ import API from "./data.js";
 import journalEntries from "./entriesDOM.js";
 import createJournalEntries from "./factoryEntries.js";
 import createEntrie from "./entryComponent.js";
+import editForm from "./editForm.js"
+import dropdown from "./dropdown.js"
 
 
 /*
@@ -11,7 +13,8 @@ import createEntrie from "./entryComponent.js";
     Change the fake variable names below to what they should be
     to get the data and display it.
 */
-
+dropdown.makeMoodDropdown()
+dropdown.makeModifyMoodDropdown()
 
 API.getJournalEntries().then(data => {
     journalEntries.addToJournal(data)
@@ -46,7 +49,7 @@ document.querySelector("#button").addEventListener("click", () => {
         alert("No special characters allowed")
         return
     }
-    let mood = document.querySelector("#mood").value
+    let mood = document.querySelector("#mood-input").value
     if (mood === null || mood === "") {
         alert("Please fill the form")
         return
@@ -116,6 +119,7 @@ sadButton.addEventListener("click", event => {
 
 
 
+
 /* Delete button event listener */
 
 document.querySelector(".entryLog").addEventListener("click", event => {
@@ -128,11 +132,29 @@ document.querySelector(".entryLog").addEventListener("click", event => {
             })
             
         })
+    } else if (event.target.id.startsWith("editEntry")) {  //Editing a single entry 
+        editForm(event.target.id.split("--")[1])  // Invoke the editForm function from edit.js, slpitting the content between -- and passing only the second [1] "element" 
     }
 })
 
 /* Edit button event listener */
 
 
+// We will create an eventListener for the save entry button if you modify an Entry
 
+document.querySelector("#editButton").addEventListener("click", (event) => {
+   
+    API.editEntry(document.querySelector("#entryId").value)
+        .then((response => {
+            document.querySelector("#entryConcept").value = "";
+            document.querySelector("#entryJournal").value = "";
+            document.querySelector("#entryDate").value = "";
+            document.querySelector("#modMood").value = "";
+            document.querySelector(".entryLog").innerHTML = "";
+            API.getJournalEntries().then(data => {
+                journalEntries.addToJournal(data)
+            })
+
+        }))
+})
 

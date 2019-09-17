@@ -16,3 +16,6 @@ fieldset {
     display: flex;
     margin-top: 10px;
 }
+#editButton {
+    margin: 10px;
+}
