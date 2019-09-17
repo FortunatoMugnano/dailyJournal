@@ -17,7 +17,7 @@ const journalEntries = {
             }
         });
              
-    }    
+    }
 }
 
 

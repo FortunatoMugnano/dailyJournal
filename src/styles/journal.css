@@ -1,15 +1,19 @@
-fieldset {
+
+main {
     display: flex;
-    flex-direction: column;
-    width: 40%;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 #moodFieldset {
     display: flex;
+    flex-direction: column;
 }
 
 #button {
     margin: 10px;
+    padding: .3em;
+    border-radius: 10px;
 }
 
 .fieldset {
@@ -18,4 +22,19 @@ fieldset {
 }
 #editButton {
     margin: 10px;
+}
+
+#searchInput {
+    display: flex;
+    flex-direction: row;
+}
+.firstForm {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+#secondForm {
+    display: flex;
+    width: 40%;
+    flex-direction: column;
 }

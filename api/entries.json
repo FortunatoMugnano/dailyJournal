@@ -64,6 +64,13 @@
       "entry": "No school today!",
       "mood": "Great",
       "id": 10
+    },
+    {
+      "dateOfEntry": "2019-09-09",
+      "conceptsCovered": "Css Modules",
+      "entry": "Covered the css modules",
+      "mood": "Great",
+      "id": 11
     }
   ],
   "mood": [
@@ -81,7 +88,7 @@
     },
     {
       "id": 4,
-      "name": "No Happy"
+      "name": "Unhappy"
     }
   ]
 }

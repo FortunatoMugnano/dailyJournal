@@ -76,17 +76,17 @@ document.querySelector("#button").addEventListener("click", () => {
 /* Radio Button eventListener part */
 
 const moodArray = document.getElementsByName("mood");
- 
-    
+
+
 moodArray.forEach(radioButton => {
-        radioButton.addEventListener("click", event => {
-            const moodName = event.target.value;
-            API.getJournalEntries()
+    radioButton.addEventListener("click", event => {
+        const moodName = event.target.value;
+        API.getJournalEntries()
             .then(data => {
                 journalEntries.filterMood(data, moodName);
             });
-        })
-    });
+    })
+});
 
 
 
@@ -94,15 +94,15 @@ moodArray.forEach(radioButton => {
 /* Delete button event listener */
 
 document.querySelector(".entryLog").addEventListener("click", event => {
-    if(event.target.id.startsWith("deleteEntry--")) {
+    if (event.target.id.startsWith("deleteEntry--")) {
         API.deleteEntries(event.target.id.split("--")[1])
-        .then(() => {
-            document.querySelector(".entryLog").innerHTML = "";
-            API.getJournalEntries().then(data => {
-                journalEntries.addToJournal(data)
+            .then(() => {
+                document.querySelector(".entryLog").innerHTML = "";
+                API.getJournalEntries().then(data => {
+                    journalEntries.addToJournal(data)
+                })
+
             })
-            
-        })
     } else if (event.target.id.startsWith("editEntry")) {  //Editing a single entry 
         editForm(event.target.id.split("--")[1])  // Invoke the editForm function from edit.js, slpitting the content between -- and passing only the second [1] "element" 
     }
@@ -114,7 +114,7 @@ document.querySelector(".entryLog").addEventListener("click", event => {
 // We will create an eventListener for the save entry button if you modify an Entry
 
 document.querySelector("#editButton").addEventListener("click", (event) => {
-   
+
     API.editEntry(document.querySelector("#entryId").value)
         .then((response => {
             document.querySelector("#entryConcept").value = "";
@@ -128,4 +128,35 @@ document.querySelector("#editButton").addEventListener("click", (event) => {
 
         }))
 })
+
+/* Search Bar eventListener */
+
+// I am creating an eventListener for the searchbar 
+
+
+document.querySelector("#searchBar").addEventListener("keypress", event => {
+
+
+    let dataArray = [] //Make a  data array
+    API.getJournalEntries() //Gets the entries from the journal
+        .then(data => 
+            data.forEach(entry => { 
+            for (const value of Object.values(entry)) { //Get the values of the article
+                let searchResult = event.target.value.toString().toUpperCase() //Uppercase the values and converts the value of an object to a string
+                let valueResult = value.toString().toUpperCase()
+                if (valueResult.includes(searchResult)) { // If valueResult includes searchResult
+                    dataArray.push(entry)//Push into the new array
+                    break //Break the function
+                }
+            }
+
+            if (dataArray.length !== 0) {
+                document.querySelector(".entryLog").innerHTML = " " // clears article
+                journalEntries.addToJournal(dataArray) //Fills article
+            }
+        })
+        )
+
+})
+
 
