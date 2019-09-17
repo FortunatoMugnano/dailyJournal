@@ -50,6 +50,20 @@
       "entry": "Today lab time and Napoli will play again Liverpool! ",
       "mood": "Super",
       "id": 7
+    },
+    {
+      "dateOfEntry": "2019-09-03",
+      "conceptsCovered": "Last day of project",
+      "entry": "Enter text",
+      "mood": "Super",
+      "id": 8
+    },
+    {
+      "dateOfEntry": "2019-09-07",
+      "conceptsCovered": "Another saturday",
+      "entry": "No school today!",
+      "mood": "Great",
+      "id": 10
     }
   ],
   "mood": [

@@ -75,47 +75,18 @@ document.querySelector("#button").addEventListener("click", () => {
 
 /* Radio Button eventListener part */
 
-const superButton = document.querySelector("#super")
-const happyButton = document.querySelector("#happy")
-const okButton = document.querySelector("#ok")
-const sadButton = document.querySelector("#sad")
-
-
-superButton.addEventListener("click", event => {
-    API.getJournalEntries()
-        .then(res => res.filter(entry => entry.mood === superButton.id))
-        .then(filteredRes => {
-            document.querySelector(".entryLog").innerHTML = ""
-            journalEntries.addToJournal(filteredRes)
+const moodArray = document.getElementsByName("mood");
+ 
+    
+moodArray.forEach(radioButton => {
+        radioButton.addEventListener("click", event => {
+            const moodName = event.target.value;
+            API.getJournalEntries()
+            .then(data => {
+                journalEntries.filterMood(data, moodName);
+            });
         })
-})
-
-happyButton.addEventListener("click", event => {
-    API.getJournalEntries()
-        .then(res => res.filter(entry => entry.mood === happyButton.id))
-        .then(filteredRes => {
-            document.querySelector(".entryLog").innerHTML = ""
-            journalEntries.addToJournal(filteredRes)
-        })
-})
-
-okButton.addEventListener("click", event => {
-    API.getJournalEntries()
-        .then(res => res.filter(entry => entry.mood === okButton.id))
-        .then(filteredRes => {
-            document.querySelector(".entryLog").innerHTML = ""
-            journalEntries.addToJournal(filteredRes)
-        })
-})
-
-sadButton.addEventListener("click", event => {
-    API.getJournalEntries()
-        .then(res => res.filter(entry => entry.mood === sadButton.id))
-        .then(filteredRes => {
-            document.querySelector(".entryLog").innerHTML = ""
-            journalEntries.addToJournal(filteredRes)
-        })
-})
+    });
 
 
 
